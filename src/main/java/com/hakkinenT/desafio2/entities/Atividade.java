@@ -21,10 +21,8 @@ public class Atividade {
     @OneToMany(mappedBy = "atividade")
     private List<Bloco> blocos = new ArrayList<>();
 
-    @ManyToMany
-    @JoinTable(name = "tb_atividade_participante",
-            joinColumns = @JoinColumn(name = "atividade_id"),
-            inverseJoinColumns = @JoinColumn(name = "participante_id"))
+
+    @ManyToMany(mappedBy = "atividades")
     private Set<Participante> participantes = new HashSet<>();
 
     public Atividade() {
